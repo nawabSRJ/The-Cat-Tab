@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "New Cat",
+    "version": "1.0",
+    "description": "Replaces the new tab page with a random image of a cute cat or kitten.",
+    "chrome_url_overrides": {
+      "newtab": "index.html"
+    },
+    "icons": {
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    },
+    "permissions": [],
+    "host_permissions": ["https://api.thecatapi.com/v1/images/search"]
+  }
+  
