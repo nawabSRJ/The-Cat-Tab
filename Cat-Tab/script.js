@@ -227,20 +227,20 @@ function saveSettingsAndClose() {
 }
 
 // Play cat sound on double click
-function playCatSound() {
-    const sounds = [
-        'https://www.myinstants.com/media/sounds/meow.mp3',
-        'https://www.myinstants.com/media/sounds/cat-meow-2.mp3',
-        'https://www.myinstants.com/media/sounds/cat-meow-6226.mp3'
-    ];
+// function playCatSound() {
+//     const sounds = [
+//         'https://www.myinstants.com/media/sounds/meow.mp3',
+//         'https://www.myinstants.com/media/sounds/cat-meow-2.mp3',
+//         'https://www.myinstants.com/media/sounds/cat-meow-6226.mp3'
+//     ];
     
-    const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
-    const audio = new Audio(randomSound);
-    audio.play().catch(e => console.log('Audio play failed:', e));
+//     const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+//     const audio = new Audio(randomSound);
+//     audio.play().catch(e => console.log('Audio play failed:', e));
     
-    // Add temporary paw cursor
-    document.body.classList.add('paw-cursor');
-    setTimeout(() => {
-        document.body.classList.remove('paw-cursor');
-    }, 1000);
-}
+//     // Add temporary paw cursor
+//     document.body.classList.add('paw-cursor');
+//     setTimeout(() => {
+//         document.body.classList.remove('paw-cursor');
+//     }, 1000);
+// }
