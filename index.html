@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat Tab - Beautiful Cats in Every New Tab</title>
     <link rel="stylesheet" href="style.css">
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="icon" href="assets/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1 class="logo">🐾 New Cat</h1>
-            <nav>
-                <a href="#features">Features</a>
-                <a href="#how-to-use">How to Use</a>
-                <a href="Cat-Tab.zip">Download</a>
-                <a href="https://github.com/nawabSRJ/The-Cat-Tab" target="_blank" class="github-link">
-                    <img src="assets/Github.svg" alt="GitHub" width="24">
+<body class="font-sans bg-white text-gray-800">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-pink-500 font-[Gloria+Hallelujah]">🐾 New Cat</h1>
+            <nav class="flex items-center space-x-6">
+                <a href="#features" class="text-gray-700 hover:text-pink-500 font-medium transition">Features</a>
+                <a href="#how-to-use" class="text-gray-700 hover:text-pink-500 font-medium transition">How to Use</a>
+                <a href="Cat-Tab.zip" class="cursor-pointer text-gray-700 hover:text-pink-500 font-medium transition">Download</a>
+                <a href="https://github.com/nawabSRJ/The-Cat-Tab" target="_blank" class="flex items-center">
+                    <i class="fab fa-github text-2xl text-gray-700 hover:text-pink-500 transition"></i>
                 </a>
             </nav>
         </div>
@@ -25,73 +26,112 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h2>Beautiful Cat Images in Every New Tab</h2>
-                    <p>Transform your browsing experience with adorable cat pictures. Free, open-source, and perfect for cat lovers!</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-label">Happy Users</span>
+        <section class="py-16 bg-gradient-to-r from-pink-50 to-pink-100">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Beautiful Cat Images in Every New Tab</h2>
+                    <p class="text-xl text-gray-600 mb-8">Transform your browsing experience with adorable cat pictures. Free, open-source, and perfect for cat lovers!</p>
+                    
+                    <div class="flex space-x-8 mb-8">
+                        <div class="text-center">
+                            <span id="download-count" class="text-4xl font-bold text-pink-500 block">0</span>
+                            <span class="text-sm text-gray-500">Downloads</span>
+                        </div>
+                        <div class="text-center">
+                            <span id="github-stars" class="text-4xl font-bold text-pink-500 block">0</span>
+                            <span class="text-sm text-gray-500">GitHub Stars</span>
                         </div>
                     </div>
-                    <a href="Cat-Tab.zip" class="btn-primary">Download Now</a>
+                    
+                    <button id="download-btn" class="cursor-pointer glow-button bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                        Download Now
+                    </button>
+                    
+                    <div class="mt-6 flex space-x-4">
+                        <span class="text-sm text-gray-500">Works with:</span>
+                        <div class="flex space-x-3">
+                            <i class="fab fa-chrome text-2xl text-gray-600"></i>
+                            <i class="fab fa-firefox text-2xl text-gray-600"></i>
+                            <i class="fab fa-edge text-2xl text-gray-600"></i>
+                            <i class="fab fa-brave text-2xl text-gray-600"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-image">
-                    <img src="assets/extension-preview.png" alt="Cat Tab Preview">
+                
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64">
+                        <!-- CSS Cat Animation -->
+                        <div class="cat-head">
+                            <div class="cat-ear left">
+                                <div class="cat-ear-inner"></div>
+                            </div>
+                            <div class="cat-ear right">
+                                <div class="cat-ear-inner"></div>
+                            </div>
+                            <div class="cat-eye left">
+                                <div class="cat-eye-inner"></div>
+                            </div>
+                            <div class="cat-eye right">
+                                <div class="cat-eye-inner"></div>
+                            </div>
+                            <div class="cat-nose"></div>
+                            <div class="cat-mouth"></div>
+                            <div class="cat-whisker left"></div>
+                            <div class="cat-whisker right"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Features Section -->
-        <section id="features" class="features">
-            <div class="container">
-                <h2>Why You'll Love It</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">😻</div>
-                        <h3>Daily Cat Dose</h3>
-                        <p>Get your daily dose of cuteness with beautiful cat images in every new tab.</p>
+        <section id="features" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why You'll Love It</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                        <div class="text-4xl mb-4">😻</div>
+                        <h3 class="text-xl font-bold mb-3">Daily Cat Dose</h3>
+                        <p class="text-gray-600">Get your daily dose of cuteness with beautiful cat images in every new tab.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🌙</div>
-                        <h3>Dark Mode</h3>
-                        <p>Eye-friendly dark theme that automatically adjusts to your system preferences.</p>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                        <div class="text-4xl mb-4">🌙</div>
+                        <h3 class="text-xl font-bold mb-3">Dark Mode</h3>
+                        <p class="text-gray-600">Eye-friendly dark theme that automatically adjusts to your system preferences.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Lightweight</h3>
-                        <p>Runs smoothly without slowing down your browser.</p>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                        <div class="text-4xl mb-4">⚡</div>
+                        <h3 class="text-xl font-bold mb-3">Lightweight</h3>
+                        <p class="text-gray-600">Runs smoothly without slowing down your browser.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- How to Use Section -->
-        <section id="how-to-use" class="how-to-use">
-            <div class="container">
-                <h2>How to Install</h2>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Download the Extension</h3>
-                            <p>Click the download button below to get the ZIP file.</p>
+        <section id="how-to-use" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">How to Install</h2>
+                <div class="max-w-2xl mx-auto space-y-6">
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">1</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Download the Extension</h3>
+                            <p class="text-gray-600">Click the download button below to get the ZIP file.</p>
                         </div>
                     </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Extract the Files</h3>
-                            <p>Unzip the downloaded file to a folder on your computer.</p>
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">2</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Extract the Files</h3>
+                            <p class="text-gray-600">Unzip the downloaded file to a folder on your computer.</p>
                         </div>
                     </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Load in Chrome</h3>
-                            <p>Open <code>chrome://extensions</code>, enable "Developer mode", and click "Load unpacked" to select the folder.</p>
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">3</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Load in Chrome</h3>
+                            <p class="text-gray-600">Open <code class="bg-gray-100 px-2 py-1 rounded">chrome://extensions</code>, enable "Developer mode", and click "Load unpacked" to select the folder.</p>
                         </div>
                     </div>
                 </div>
@@ -99,18 +139,20 @@
         </section>
 
         <!-- Download Section -->
-        <section id="download" class="download">
-            <div class="container">
-                <h2>Ready to Get Started?</h2>
-                <p>Download the Cat Tab extension and transform your browsing experience today!</p>
-                <button id="download-btn" class="btn-primary">Download Now</button>
+        <section id="download" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Ready to Get Started?</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Download the Cat Tab extension and transform your browsing experience today!</p>
+                <button id="download-btn-2" class="cursor-pointer glow-button bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 mb-12">
+                    Download Now
+                </button>
                 
-                <div class="manual-install">
-                    <h3>Manual Installation Guide</h3>
-                    <ol>
+                <div class="bg-white p-8 rounded-xl shadow-md max-w-3xl mx-auto text-left">
+                    <h3 class="text-xl font-bold mb-4">Manual Installation Guide</h3>
+                    <ol class="list-decimal pl-6 space-y-3 text-gray-600">
                         <li>Download the ZIP file using the button above</li>
                         <li>Extract all files to a permanent folder (Chrome needs to access them)</li>
-                        <li>Open Chrome and navigate to <code>chrome://extensions</code></li>
+                        <li>Open Chrome and navigate to <code class="bg-gray-100 px-2 py-1 rounded">chrome://extensions</code></li>
                         <li>Enable "Developer mode" (toggle in top right corner)</li>
                         <li>Click "Load unpacked" and select the folder where you extracted the files</li>
                         <li>Enjoy your cat-filled new tabs!</li>
@@ -120,13 +162,13 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>Made with ❤️ by <a href="https://github.com/nawabSRJ" target="_blank">Srajan</a></p>
-            <p>Cat images provided by <a href="https://thecatapi.com" target="_blank">The Cat API</a></p>
+    <footer class="py-8 bg-white border-t border-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 mb-2">Made with ❤️ by <a href="https://github.com/nawabSRJ" target="_blank" class="text-pink-500 hover:underline">Srajan</a></p>
+            <p class="text-gray-600">Cat images provided by <a href="https://thecatapi.com" target="_blank" class="text-pink-500 hover:underline">The Cat API</a></p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
