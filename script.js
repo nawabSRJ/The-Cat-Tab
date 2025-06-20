@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.removeChild(link);
 
     // Update download count (simulated)
-    incrementCounter("download-count", 17972);
+    // incrementCounter("download-count", 17972);
+    incrementDownloadCount();
 
     // Show a confirmation message
     alert("Download started! Please check your downloads folder.");
@@ -69,6 +70,8 @@ async function getStars() {
     );
     const data = await response.json();
     const stars = data.stargazers_count;
+    console.log('Stars : ',stars);
+    
     incrementCounter("github-stars", stars);
   } catch (error) {
     console.error("Error fetching GitHub stars:", error);
@@ -80,5 +83,13 @@ async function getDownloadCount() {
     "https://script.google.com/macros/s/AKfycbwQjLgrO3NZb9C4ZMZ3GmurM_jngjfQnuKA2jRFNSHHNkGyhluqYbPGIWlyYn0-2VGb4Q/exec"
   );
   const data = await res.json();
+  console.log('Downloads : ',data.count)
   incrementCounter("download-count", data.count);
+}
+
+async function incrementDownloadCount() {
+    await fetch('https://script.google.com/macros/s/AKfycbwQjLgrO3NZb9C4ZMZ3GmurM_jngjfQnuKA2jRFNSHHNkGyhluqYbPGIWlyYn0-2VGb4Q/exec', {
+        method: 'POST'
+    });
+    await getDownloadCount()  // await is used so that it updates count only after successful increment
 }
